@@ -34,20 +34,23 @@ A powerful and flexible SwiftUI component for creating interactive before/after 
 ### Swift Package Manager
 
 #### Xcode
+
 1. **File → Add Package Dependencies**
 2. **Enter URL**: `https://github.com/mkhasson97/MoSlider.git`
 3. **Add Package**
 
 #### Package.swift
+
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yourusername/MoSlider.git", from: "1.0.0")
+    .package(url: "https://github.com/mkhasson97/MoSlider.git", from: "1.0.0")
 ]
 ```
 
 ## 💡 Usage
 
 ### Basic Example
+
 ```swift
 import SwiftUI
 import MoSlider
@@ -60,7 +63,7 @@ struct ContentView: View {
                 .fill(.red.gradient)
                 .overlay(Text("BEFORE").foregroundColor(.white))
         } afterContent: {
-            // After content  
+            // After content
             Rectangle()
                 .fill(.blue.gradient)
                 .overlay(Text("AFTER").foregroundColor(.white))
@@ -72,6 +75,7 @@ struct ContentView: View {
 ```
 
 ### Image Comparison
+
 ```swift
 BeforeAfterSlider {
     Image("before_photo")
@@ -86,6 +90,7 @@ BeforeAfterSlider {
 ```
 
 ### UI State Comparison
+
 ```swift
 BeforeAfterSlider {
     // Loading state
@@ -112,6 +117,7 @@ BeforeAfterSlider {
 ```
 
 ### Data Visualization Comparison
+
 ```swift
 BeforeAfterSlider {
     BarChart(data: oldData, color: .red)
@@ -121,6 +127,7 @@ BeforeAfterSlider {
 ```
 
 ### System Images
+
 ```swift
 BeforeAfterSlider {
     Image(systemName: "photo")
@@ -139,6 +146,7 @@ BeforeAfterSlider {
 ## 🎯 Advanced Use Cases
 
 ### Theme Comparison
+
 ```swift
 BeforeAfterSlider {
     AppPreview()
@@ -150,6 +158,7 @@ BeforeAfterSlider {
 ```
 
 ### Performance Visualization
+
 ```swift
 BeforeAfterSlider {
     LoadingSpinner(slow: true)
@@ -161,6 +170,7 @@ BeforeAfterSlider {
 ```
 
 ### Layout Comparison
+
 ```swift
 BeforeAfterSlider {
     ListView(items: items)
@@ -190,6 +200,7 @@ The slider automatically adapts to your content and provides:
 Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
 ### Development Setup
+
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
@@ -227,6 +238,7 @@ SOFTWARE.
 ## 👨‍💻 Author
 
 **Mohammad Alhasson**
+
 - Website: [mkhasson97.com](https://mkhasson97.com)
 - GitHub: [@mkhasson97](https://github.com/mkhasson97)
 - X: [@mkhasson97](https://x.com/mkhasson97)
@@ -240,6 +252,7 @@ SOFTWARE.
 ## 📊 Usage Stats
 
 If you're using MoSlider in your project, I'd love to hear about it! Feel free to:
+
 - ⭐ Star this repository
 - 🐛 Report issues
 - 💡 Suggest new features
