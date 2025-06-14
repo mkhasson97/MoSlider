@@ -21,7 +21,13 @@ A powerful and flexible SwiftUI component for creating interactive before/after 
 
 ## 📱 Screenshots
 
-![MoSlider Demo](demo.gif)
+![Before](https://github.com/user-attachments/assets/3a07d86a-95f6-400a-90dc-6840d67db44d)
+
+![After](https://github.com/user-attachments/assets/ca27f7a3-c122-4468-88ba-a500735f6b7f)
+
+![Preview](https://github.com/user-attachments/assets/f3eea9c6-4c0e-480a-b89d-ae1b7633268a)
+
+![Demo] (https://github.com/user-attachments/assets/d3e5c2f7-0d8d-418a-ae74-66e3a13a7323)
 
 ## 🚀 Installation
 
@@ -29,7 +35,7 @@ A powerful and flexible SwiftUI component for creating interactive before/after 
 
 #### Xcode
 1. **File → Add Package Dependencies**
-2. **Enter URL**: `https://github.com/yourusername/MoSlider.git`
+2. **Enter URL**: `https://github.com/mkhasson97/MoSlider.git`
 3. **Add Package**
 
 #### Package.swift
