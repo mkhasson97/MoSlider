@@ -22,23 +22,27 @@ A powerful and flexible SwiftUI component for creating interactive before/after 
 ## 📱 Screenshots
 
 <div align="center">
-  <h3>📱 Before</h3>
-  <img src="https://github.com/user-attachments/assets/3a07d86a-95f6-400a-90dc-6840d67db44d" width="250" alt="Before">
-</div>
-
-<div align="center">
-  <h3>📱 After</h3>
-  <img src="https://github.com/user-attachments/assets/ca27f7a3-c122-4468-88ba-a500735f6b7f" width="250" alt="After">
-</div>
-
-<div align="center">
-  <h3>👀 Preview</h3>
-  <img src="https://github.com/user-attachments/assets/f3eea9c6-4c0e-480a-b89d-ae1b7633268a" width="250" alt="Preview">
+  <table>
+    <tr>
+      <td align="center">
+        <h3>📱 Before</h3>
+        <img src="https://github.com/user-attachments/assets/3a07d86a-95f6-400a-90dc-6840d67db44d" width="200" alt="Before">
+      </td>
+      <td align="center">
+        <h3>📱 After</h3>
+        <img src="https://github.com/user-attachments/assets/ca27f7a3-c122-4468-88ba-a500735f6b7f" width="200" alt="After">
+      </td>
+      <td align="center">
+        <h3>👀 Preview</h3>
+        <img src="https://github.com/user-attachments/assets/f3eea9c6-4c0e-480a-b89d-ae1b7633268a" width="200" alt="Preview">
+      </td>
+    </tr>
+  </table>
 </div>
 
 <div align="center">
   <h3>🎬 Demo</h3>
-  <img src="https://github.com/user-attachments/assets/8fa35f1b-07b1-4cf0-87b4-107828ccd798" width="300" alt="MoSlider Demo">
+  <img src="https://github.com/user-attachments/assets/8fa35f1b-07b1-4cf0-87b4-107828ccd798" width="350" alt="MoSlider Demo">
 </div>
 
 ## 🚀 Installation
