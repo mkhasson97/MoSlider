@@ -1,4 +1,7 @@
 # MoSlider
+<div align="center">
+<img src="https://github.com/user-attachments/assets/30bbdf3c-9a8b-4827-b32b-24fdecb3db2a" width="300" alt="Before">
+</div>
 
 [![Swift](https://img.shields.io/badge/Swift-5.9-orange.svg)](https://swift.org)
 [![iOS](https://img.shields.io/badge/iOS-17.0+-blue.svg)](https://developer.apple.com/ios/)
