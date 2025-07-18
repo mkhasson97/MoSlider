@@ -57,6 +57,20 @@ A powerful and flexible SwiftUI component for creating interactive before/after 
   </table>
 </div>
 
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <h3>📱 Vertical & Horizontal</h3>
+        <img src="https://github.com/user-attachments/assets/b5e06bc5-e85c-462f-ac88-8af12a9bc426" width="200" alt="Before">
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+
 <div align="center">
   <h3>🎬 Demo</h3>
   <img src="https://github.com/user-attachments/assets/8fa35f1b-07b1-4cf0-87b4-107828ccd798" width="350" alt="MoSlider Demo">
@@ -172,6 +186,7 @@ BeforeAfterSlider {
 .sliderWidth(4)
 .handleSize(55)
 .customLabels(before: "☀️ Day", after: "🌙 Night")
+.showLabels(true)
 .showStartAnimation(true)
 .initialPosition(0.2)
 .animationStyle(.spring(response: 0.6, dampingFraction: 0.8))

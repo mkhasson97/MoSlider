@@ -298,7 +298,7 @@ public struct BeforeAfterSlider<BeforeContent: View, AfterContent: View>: View {
 
 // MARK: - View Modifiers
 extension BeforeAfterSlider {
-    /// Sets the slider color
+    // Sets the slider color
     public func sliderColor(_ color: Color) -> BeforeAfterSlider {
         BeforeAfterSlider(
             showLabels: showLabels,
@@ -320,7 +320,7 @@ extension BeforeAfterSlider {
         )
     }
     
-    /// Sets the slider line width
+    // Sets the slider line width
     public func sliderWidth(_ width: CGFloat) -> BeforeAfterSlider {
         BeforeAfterSlider(
             showLabels: showLabels,
@@ -342,7 +342,7 @@ extension BeforeAfterSlider {
         )
     }
     
-    /// Sets the handle size
+    // Sets the handle size
     public func handleSize(_ size: CGFloat) -> BeforeAfterSlider {
         BeforeAfterSlider(
             showLabels: showLabels,
@@ -364,7 +364,29 @@ extension BeforeAfterSlider {
         )
     }
     
-    /// Sets custom labels
+    // Sets whether to show labels
+    public func showLabels(_ show: Bool) -> BeforeAfterSlider {
+        BeforeAfterSlider(
+            showLabels: show,
+            noDrag: noDrag,
+            sliderColor: sliderColor,
+            sliderWidth: sliderWidth,
+            handleSize: handleSize,
+            beforeLabel: beforeLabel,
+            afterLabel: afterLabel,
+            animationStyle: animationStyle,
+            initialPosition: initialPosition,
+            orientation: orientation,
+            allowTapToMove: allowTapToMove,
+            dragSensitivity: dragSensitivity,
+            enableHapticFeedback: enableHapticFeedback,
+            showStartAnimation: showStartAnimation,
+            beforeContent: { beforeContent },
+            afterContent: { afterContent }
+        )
+    }
+    
+    // Sets custom labels
     public func customLabels(before: String, after: String) -> BeforeAfterSlider {
         BeforeAfterSlider(
             showLabels: showLabels,
@@ -386,7 +408,7 @@ extension BeforeAfterSlider {
         )
     }
     
-    /// Sets animation style
+    // Sets animation style
     public func animationStyle(_ animation: Animation) -> BeforeAfterSlider {
         BeforeAfterSlider(
             showLabels: showLabels,
@@ -408,7 +430,7 @@ extension BeforeAfterSlider {
         )
     }
     
-    /// Sets initial position
+    // Sets initial position
     public func initialPosition(_ position: CGFloat) -> BeforeAfterSlider {
         BeforeAfterSlider(
             showLabels: showLabels,
@@ -430,7 +452,7 @@ extension BeforeAfterSlider {
         )
     }
     
-    /// Sets orientation
+    // Sets orientation
     public func orientation(_ orientation: SliderOrientation) -> BeforeAfterSlider {
         BeforeAfterSlider(
             showLabels: showLabels,
@@ -452,7 +474,7 @@ extension BeforeAfterSlider {
         )
     }
     
-    /// Sets whether tap to move is allowed
+    // Sets whether tap to move is allowed
     public func allowTapToMove(_ enabled: Bool) -> BeforeAfterSlider {
         BeforeAfterSlider(
             showLabels: showLabels,
@@ -474,7 +496,7 @@ extension BeforeAfterSlider {
         )
     }
     
-    /// Sets drag sensitivity
+    // Sets drag sensitivity
     public func dragSensitivity(_ sensitivity: CGFloat) -> BeforeAfterSlider {
         BeforeAfterSlider(
             showLabels: showLabels,
@@ -496,7 +518,7 @@ extension BeforeAfterSlider {
         )
     }
     
-    /// Sets haptic feedback
+    // Sets haptic feedback
     public func enableHapticFeedback(_ enabled: Bool) -> BeforeAfterSlider {
         BeforeAfterSlider(
             showLabels: showLabels,
@@ -518,7 +540,7 @@ extension BeforeAfterSlider {
         )
     }
     
-    /// Sets start animation
+    // Sets start animation
     public func showStartAnimation(_ enabled: Bool) -> BeforeAfterSlider {
         BeforeAfterSlider(
             showLabels: showLabels,
@@ -543,7 +565,7 @@ extension BeforeAfterSlider {
 
 // MARK: - Image Convenience Functions
 extension BeforeAfterSlider where BeforeContent == Image, AfterContent == Image {
-    /// Creates a BeforeAfterSlider with images
+    // Creates a BeforeAfterSlider with images
     public static func withImages(
         beforeImage: Image,
         afterImage: Image,
@@ -610,6 +632,7 @@ extension BeforeAfterSlider where BeforeContent == Image, AfterContent == Image 
         .handleSize(30)
         .showStartAnimation(true)
         .customLabels(before: "Old", after: "New")
+        .showLabels(false)
         .frame(height: 200)
         
         // Vertical orientation
