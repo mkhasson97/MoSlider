@@ -1,44 +1,65 @@
 # MoSlider
+<div align="center">
+<img src="https://github.com/user-attachments/assets/1a8eccf4-42fd-4f74-b42e-0c1c264a6787" width="300" alt="Before">
+</div>
 
-[![Swift](https://img.shields.io/badge/Swift-5.9-orange.svg)](https://swift.org)
-[![iOS](https://img.shields.io/badge/iOS-17.0+-blue.svg)](https://developer.apple.com/ios/)
-[![macOS](https://img.shields.io/badge/macOS-14.0+-blue.svg)](https://developer.apple.com/macos/)
+[![Swift](https://img.shields.io/badge/Swift-5.7-orange.svg)](https://swift.org)
+[![iOS](https://img.shields.io/badge/iOS-15.0+-blue.svg)](https://developer.apple.com/ios/)
+[![macOS](https://img.shields.io/badge/macOS-12.0+-blue.svg)](https://developer.apple.com/macos/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager/)
 
-A powerful and flexible SwiftUI component for creating interactive before/after comparison sliders. Perfect for showcasing image transformations, UI state changes, data visualizations, and any visual comparisons.
+A powerful and flexible SwiftUI component for creating interactive before/after comparison sliders. Perfect for showcasing image transformations, UI state changes, data visualizations, and any visual comparisons with **11 advanced features** and smooth animations.
 
 ## ✨ Features
 
+### 🎯 **Core Features**
 - 🎨 **Universal Content Support** - Works with any SwiftUI View, not just images
 - 🖼️ **Multiple Content Types** - Images, custom views, charts, UI states, and more
 - 🌍 **RTL Language Support** - Automatic right-to-left language adaptation
 - 📱 **Intuitive Interactions** - Drag the slider or tap anywhere to compare
 - ✨ **Smooth Animations** - Natural spring animations and transitions
-- 🎯 **Modern SwiftUI** - Built for iOS 17+ with latest SwiftUI features
+- 🎯 **Modern SwiftUI** - Built for iOS 15+ with latest SwiftUI features
 - 🔄 **Responsive Design** - Adapts to any screen size and orientation
 - 🧩 **Simple API** - Clean ViewBuilder syntax for easy integration
+
+### 🚀 **Advanced Features**
+- 🎬 **Start Animation** - Eye-catching intro animation that showcases the comparison
+- 🎨 **Full Customization** - Colors, sizes, labels, and animations
+- 📐 **Orientation Support** - Horizontal and vertical layouts
+- 🔄 **Haptic Feedback** - Enhanced user experience with tactile responses
+- ♿ **Accessibility** - Complete VoiceOver support with increment/decrement actions
+- 🎯 **Drag Sensitivity** - Customizable gesture responsiveness
+- 🖱️ **Tap Controls** - Enable/disable tap-to-move functionality
+- 📍 **Initial Position** - Set custom starting slider position
+- 🎪 **Display Mode** - Static display without user interaction
+- 🏷️ **Custom Labels** - Personalize "Before" and "After" text
+- 🎭 **Animation Styles** - Choose from various animation types
 
 ## 📱 Screenshots
 
 <div align="center">
-  <h3>📱 Before</h3>
-  <img src="https://github.com/user-attachments/assets/3a07d86a-95f6-400a-90dc-6840d67db44d" width="250" alt="Before">
-</div>
-
-<div align="center">
-  <h3>📱 After</h3>
-  <img src="https://github.com/user-attachments/assets/ca27f7a3-c122-4468-88ba-a500735f6b7f" width="250" alt="After">
-</div>
-
-<div align="center">
-  <h3>👀 Preview</h3>
-  <img src="https://github.com/user-attachments/assets/f3eea9c6-4c0e-480a-b89d-ae1b7633268a" width="250" alt="Preview">
+  <table>
+    <tr>
+      <td align="center">
+        <h3>📱 Before</h3>
+        <img src="https://github.com/user-attachments/assets/3a07d86a-95f6-400a-90dc-6840d67db44d" width="200" alt="Before">
+      </td>
+      <td align="center">
+        <h3>📱 After</h3>
+        <img src="https://github.com/user-attachments/assets/ca27f7a3-c122-4468-88ba-a500735f6b7f" width="200" alt="After">
+      </td>
+      <td align="center">
+        <h3>👀 Preview</h3>
+        <img src="https://github.com/user-attachments/assets/f3eea9c6-4c0e-480a-b89d-ae1b7633268a" width="200" alt="Preview">
+      </td>
+    </tr>
+  </table>
 </div>
 
 <div align="center">
   <h3>🎬 Demo</h3>
-  <img src="https://github.com/user-attachments/assets/8fa35f1b-07b1-4cf0-87b4-107828ccd798" width="300" alt="MoSlider Demo">
+  <img src="https://github.com/user-attachments/assets/8fa35f1b-07b1-4cf0-87b4-107828ccd798" width="350" alt="MoSlider Demo">
 </div>
 
 ## 🚀 Installation
@@ -86,7 +107,7 @@ struct ContentView: View {
 }
 ```
 
-### Image Comparison
+### Image Comparison with Start Animation
 
 ```swift
 BeforeAfterSlider {
@@ -98,7 +119,79 @@ BeforeAfterSlider {
         .resizable()
         .aspectRatio(contentMode: .fill)
 }
+.showStartAnimation(true)
+.sliderColor(.blue)
+.customLabels(before: "Original", after: "Enhanced")
 .frame(height: 400)
+```
+
+### Vertical Orientation
+
+```swift
+BeforeAfterSlider {
+    Rectangle()
+        .fill(.purple.gradient)
+        .overlay(Text("TOP").foregroundColor(.white))
+} afterContent: {
+    Rectangle()
+        .fill(.orange.gradient)
+        .overlay(Text("BOTTOM").foregroundColor(.white))
+}
+.orientation(.vertical)
+.sliderColor(.yellow)
+.sliderWidth(6)
+.handleSize(50)
+.frame(height: 300)
+```
+
+### All Features Combined
+
+```swift
+BeforeAfterSlider {
+    VStack {
+        Image(systemName: "sun.max")
+            .font(.system(size: 40))
+            .foregroundColor(.yellow)
+        Text("Day Mode")
+            .font(.title3)
+    }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .background(.yellow.opacity(0.1))
+} afterContent: {
+    VStack {
+        Image(systemName: "moon.stars")
+            .font(.system(size: 40))
+            .foregroundColor(.blue)
+        Text("Night Mode")
+            .font(.title3)
+    }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .background(.blue.opacity(0.1))
+}
+.sliderColor(.purple)
+.sliderWidth(4)
+.handleSize(55)
+.customLabels(before: "☀️ Day", after: "🌙 Night")
+.showStartAnimation(true)
+.initialPosition(0.2)
+.animationStyle(.spring(response: 0.6, dampingFraction: 0.8))
+.enableHapticFeedback(true)
+.allowTapToMove(true)
+.dragSensitivity(1.2)
+.frame(height: 250)
+```
+
+### Image Convenience Method
+
+```swift
+BeforeAfterSlider.withImages(
+    beforeImage: Image("original"),
+    afterImage: Image("enhanced"),
+    showStartAnimation: true
+)
+.sliderColor(.mint)
+.customLabels(before: "Before AI", after: "After AI")
+.frame(height: 300)
 ```
 
 ### UI State Comparison
@@ -126,33 +219,51 @@ BeforeAfterSlider {
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(.green.opacity(0.2))
 }
+.showStartAnimation(true)
+.customLabels(before: "Loading", after: "Loaded")
 ```
 
-### Data Visualization Comparison
+## 🛠️ Customization API
+
+### Style Modifiers
+
+| Modifier | Description | Example |
+|----------|-------------|---------|
+| `.sliderColor(_:)` | Sets slider and handle color | `.sliderColor(.blue)` |
+| `.sliderWidth(_:)` | Sets line thickness | `.sliderWidth(4)` |
+| `.handleSize(_:)` | Sets handle diameter | `.handleSize(50)` |
+| `.customLabels(before:after:)` | Custom label text | `.customLabels(before: "Old", after: "New")` |
+
+### Behavior Modifiers
+
+| Modifier | Description | Example |
+|----------|-------------|---------|
+| `.showStartAnimation(_:)` | Intro animation | `.showStartAnimation(true)` |
+| `.initialPosition(_:)` | Starting position (0-1) | `.initialPosition(0.3)` |
+| `.enableHapticFeedback(_:)` | Haptic feedback | `.enableHapticFeedback(true)` |
+| `.allowTapToMove(_:)` | Enable tap-to-move | `.allowTapToMove(false)` |
+| `.dragSensitivity(_:)` | Gesture sensitivity | `.dragSensitivity(1.5)` |
+
+### Layout Modifiers
+
+| Modifier | Description | Example |
+|----------|-------------|---------|
+| `.orientation(_:)` | Layout direction | `.orientation(.vertical)` |
+| `.animationStyle(_:)` | Animation type | `.animationStyle(.spring())` |
+
+### Special Modes
 
 ```swift
-BeforeAfterSlider {
-    BarChart(data: oldData, color: .red)
-} afterContent: {
-    BarChart(data: newData, color: .green)
-}
-```
+// Display only mode (no interaction)
+BeforeAfterSlider(noDrag: true) { ... } afterContent: { ... }
+    .initialPosition(0.7)
 
-### System Images
+// High sensitivity mode
+BeforeAfterSlider { ... } afterContent: { ... }
+    .dragSensitivity(2.0)
 
-```swift
-BeforeAfterSlider {
-    Image(systemName: "photo")
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-        .foregroundColor(.secondary)
-} afterContent: {
-    Image(systemName: "photo.fill")
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-        .foregroundColor(.primary)
-}
-.frame(height: 200)
+// No labels mode
+BeforeAfterSlider(showLabels: false) { ... } afterContent: { ... }
 ```
 
 ## 🎯 Advanced Use Cases
@@ -167,6 +278,22 @@ BeforeAfterSlider {
     AppPreview()
         .preferredColorScheme(.dark)
 }
+.customLabels(before: "Light Theme", after: "Dark Theme")
+.showStartAnimation(true)
+```
+
+### Data Visualization Comparison
+
+```swift
+BeforeAfterSlider {
+    BarChart(data: oldData, color: .red)
+        .overlay(Text("Q3 2024"), alignment: .topLeading)
+} afterContent: {
+    BarChart(data: newData, color: .green)
+        .overlay(Text("Q4 2024"), alignment: .topLeading)
+}
+.customLabels(before: "Previous Quarter", after: "Current Quarter")
+.sliderColor(.blue)
 ```
 
 ### Performance Visualization
@@ -174,38 +301,55 @@ BeforeAfterSlider {
 ```swift
 BeforeAfterSlider {
     LoadingSpinner(slow: true)
-        .overlay(Text("Slow").foregroundColor(.red))
+        .overlay(
+            VStack {
+                Text("Slow")
+                Text("3.2s")
+                    .font(.caption)
+            }
+            .foregroundColor(.red)
+        )
 } afterContent: {
     LoadingSpinner(fast: true)
-        .overlay(Text("Fast").foregroundColor(.green))
+        .overlay(
+            VStack {
+                Text("Fast")
+                Text("0.8s")
+                    .font(.caption)
+            }
+            .foregroundColor(.green)
+        )
 }
+.customLabels(before: "Before Optimization", after: "After Optimization")
+.showStartAnimation(true)
 ```
 
-### Layout Comparison
+## ♿ Accessibility
 
-```swift
-BeforeAfterSlider {
-    ListView(items: items)
-} afterContent: {
-    GridView(items: items)
-}
-```
+MoSlider includes comprehensive accessibility support:
 
-## 🛠️ Customization
+- **VoiceOver** - Descriptive labels and position announcements
+- **Gesture Support** - Increment/decrement actions for VoiceOver users
+- **Semantic Markup** - Proper accessibility traits and roles
+- **Custom Labels** - Meaningful content descriptions
+- **Position Feedback** - Current slider position announcements
 
-The slider automatically adapts to your content and provides:
+## 📱 Platform Support
 
-- **Automatic RTL Support** - Works seamlessly with right-to-left languages
-- **Responsive Labels** - "Original" and "Processed" labels that fade based on position
-- **Smooth Interactions** - Natural drag gestures and tap-to-position
-- **Flexible Sizing** - Adapts to any frame size you provide
+- **iOS 15.0+**
+- **macOS 12.0+**
+- **tvOS 15.0+**
+- **watchOS 8.0+**
+- **Swift 5.7+**
+- **Xcode 14.0+**
 
-## 📋 Requirements
+## 🔧 Technical Features
 
-- **iOS 17.0+**
-- **macOS 14.0+**
-- **Swift 5.9+**
-- **Xcode 15.0+**
+- **RTL Language Support** - Automatic adaptation for right-to-left languages
+- **Smooth Animations** - 60fps performance with optimized rendering
+- **Memory Efficient** - Minimal resource usage and smart clipping
+- **Gesture Recognition** - Advanced touch handling with customizable sensitivity
+- **Responsive Design** - Adapts to any screen size and orientation
 
 ## 🤝 Contributing
 
@@ -272,4 +416,4 @@ If you're using MoSlider in your project, I'd love to hear about it! Feel free t
 
 ---
 
-**Made with ❤️ in Swift**
+**Made with ❤️ in Swift** • **11 Advanced Features** • **Production Ready**
