@@ -101,10 +101,12 @@ public struct BeforeAfterSlider<BeforeContent: View, AfterContent: View>: View {
                         sliderPosition = min(max(adjustedPos, 0), 1)
                         
                         // Haptic feedback
+                        #if os(iOS)
                         if enableHapticFeedback {
                             let impactFeedback = UIImpactFeedbackGenerator(style: .light)
                             impactFeedback.impactOccurred()
                         }
+                        #endif
                     }
                     .onEnded { _ in
                         isDragging = false
