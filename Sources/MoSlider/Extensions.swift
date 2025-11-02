@@ -6,26 +6,32 @@
 //
 
 import SwiftUI
+
 #if canImport(UIKit)
 import UIKit
-typealias PlatformColor = UIColor
 #elseif canImport(AppKit)
 import AppKit
-typealias PlatformColor = NSColor
 #endif
 
 // MARK: - Color Extension for Contrast
 extension Color {
     /// Returns a contrasting color (black or white) based on the luminance of the current color
     func contrastColor() -> Color {
-        // Convert to UIColor to get RGB values
-        let uiColor = UIColor(self)
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
+        // Convert to platform-specific color to get RGB values
+        #if canImport(UIKit)
+        guard let components = UIColor(self).cgColor.components else {
+            return .black
+        }
+        #elseif canImport(AppKit)
+        guard let nsColor = NSColor(self).usingColorSpace(.deviceRGB) else {
+            return .black
+        }
+        let components = [nsColor.redComponent, nsColor.greenComponent, nsColor.blueComponent]
+        #endif
         
-        uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        let red = components[0]
+        let green = components[1]
+        let blue = components[2]
         
         // Calculate luminance using the standard formula
         let luminance = 0.299 * red + 0.587 * green + 0.114 * blue
